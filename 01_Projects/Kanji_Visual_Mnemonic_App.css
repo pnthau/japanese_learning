@@ -1,0 +1,240 @@
+:root {
+    --bg-color: #f0f4f8;
+    --card-bg: #ffffff;
+    --text-main: #333333;
+    --accent-red: #e74c3c;
+    --accent-blue: #3498db;
+    --accent-green: #27ae60;
+    --pill-bg: #f1f2f6;
+    --border-radius: 16px;
+    --shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: var(--text-main);
+    padding: 20px;
+}
+
+.header-section {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 450px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+select {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #dcdde1;
+    background: white;
+    font-size: 1rem;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    color: #2c3e50;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+}
+
+/* 3D Flip Card Styles */
+.flashcard-wrapper {
+    perspective: 1000px;
+    width: 100%;
+    height: 500px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.flashcard-wrapper.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 25px;
+    overflow: hidden;
+}
+
+/* Front Face */
+.card-front {
+    justify-content: center;
+}
+
+.kanji-main {
+    font-size: 10rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.flip-hint {
+    font-size: 0.9rem;
+    color: #bdc3c7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Back Face */
+.card-back {
+    transform: rotateY(180deg);
+    justify-content: flex-start;
+}
+
+.han-viet {
+    color: var(--accent-red);
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.readings-pill {
+    background: var(--pill-bg);
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #57606f;
+}
+
+.radical-box {
+    color: var(--accent-green);
+    font-size: 1rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.radical-box em {
+    font-style: italic;
+    font-weight: normal;
+}
+
+.mnemonic {
+    color: var(--accent-green);
+    font-style: italic;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.meaning {
+    color: var(--accent-blue);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.examples-box {
+    width: 100%;
+    background: #fafafa;
+    border-left: 5px solid var(--accent-blue);
+    padding: 12px 15px;
+    text-align: left;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+    margin-top: auto;
+}
+
+.example-item {
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.progress-container {
+    width: 100%;
+    height: 6px;
+    background: #dfe4ea;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #747d8c;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.btn {
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn-nav {
+    background: var(--accent-blue);
+    color: white;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+}
+
+.btn-audio {
+    background: var(--accent-green);
+    color: white;
+    padding: 0 30px;
+    height: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    gap: 10px;
+}

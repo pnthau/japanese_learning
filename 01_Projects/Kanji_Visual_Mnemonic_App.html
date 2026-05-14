@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanji Master Pro - PARA Edition</title>
+    <link rel="stylesheet" href="Kanji_Visual_Mnemonic_App.css">
+</head>
+<body>
+
+    <div class="header-section">
+        <h1>Kanji Master Pro</h1>
+        <div style="margin-bottom: 10px;">
+            <a href="../index.html" style="text-decoration: none; font-size: 12px; color: var(--accent-blue); font-weight: bold;">◀ Quay lại Master Hub</a>
+        </div>
+        <select id="unit-selector">            <option value="Unit 4">第4課：自然と数字</option>
+            <option value="Unit 5">第5課：基本要素と人々</option>
+            <option value="Unit 6">第6課：動作と人々</option>
+            <option value="Unit 7">第7課：位置と数字</option>
+            <option value="Unit 8">第8課：家族と学校</option>
+            <option value="Unit 9">第9課：季節と生活</option>
+            <option value="Unit 10">第10課：動作と自然</option>
+            <option value="Unit 11">第11課：日常生活の動作</option>
+            <option value="Unit 12">第12課：天気と時間</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <div class="flashcard-wrapper" id="card-wrapper">
+            <div class="card-inner">
+                <div class="card-face card-front">
+                    <div id="kanji-main" class="kanji-main">一</div>
+                    <div class="flip-hint">クリックして分析を表示</div>
+                </div>
+
+                <div class="card-face card-back">
+                    <div id="han-viet" class="han-viet">NHẤT</div>
+                    <div class="readings-pill">
+                        On: <span id="on-yomi">イチ</span> | Kun: <span id="kun-yomi">ひと</span>
+                    </div>
+                    <div id="radical" class="radical-box"></div>
+                    <div id="mnemonic" class="mnemonic">Loading...</div>
+                    <div id="meaning" class="meaning">Loading...</div>
+                    <div class="examples-box" id="examples-list"></div>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-nav" id="prev-btn">◀</button>
+            <button class="btn btn-audio" id="audio-btn">🔊 聴く</button>
+            <button class="btn btn-nav" id="next-btn">▶</button>
+        </div>
+    </div>
+
+    <script src="Kanji_Visual_Mnemonic_App.js"></script>
+</body>
+</html>
